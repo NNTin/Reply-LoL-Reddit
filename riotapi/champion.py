@@ -1,13 +1,10 @@
 import requests
-#message = True
-
-SteamAPIKey = "RGAPI-9B0F1DDB-53F4-4B10-935B-9AC8BAF7D1D8"
-
+from secret.riotapikey import RiotAPIKey
 
 def requestChampions():
     print('[riotapi/champion] request champions...')
 
-    URL = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?api_key=" + SteamAPIKey
+    URL = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?api_key=" + RiotAPIKey
     response = requests.get(URL)
     response.connection.close()
     response = response.json()
