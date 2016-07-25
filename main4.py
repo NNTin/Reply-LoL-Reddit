@@ -2,7 +2,10 @@
 from subredditstylesheet import getchampionimages, getitemimages, getsummonerspells
 from subredditstylesheet import resizeimages
 from subredditstylesheet import cssgenerator
-from riotapi import summoner, matchlist, match, champion
+from riotapi import summoner, matchlist, match, champion, item
+from converter import initializeconverters, championconverter, itemconverter, spellconverter, matchconverter
+
+from converter import championconverter
 
 #getchampionimages.getChampionImages()
 #resizeimages.resizeImages()
@@ -15,7 +18,7 @@ from riotapi import summoner, matchlist, match, champion
 #resizeimages.resizeImages()
 #cssgenerator.createSingleImage()
 #cssgenerator.generateCode()
-cssgenerator.generateTestCode()
+#cssgenerator.generateTestCode()
 
 
 
@@ -42,3 +45,8 @@ cssgenerator.generateTestCode()
 #champion.updateChampionDictionary()
 #print(champion.championDictionaryById)
 #print(champion.championDictionaryByName)
+
+item.updateItemDictionary()
+initializeconverters.initializeConverters()
+print(itemconverter.itemDictionary)
+print(itemconverter.itemConverter)
