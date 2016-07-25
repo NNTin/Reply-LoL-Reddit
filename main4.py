@@ -29,5 +29,5 @@ from riotapi import summoner, matchlist, match, champion
 #print(result[:-2])
 
 champion.updateChampionDictionary()
-print(champion.championDictionaryById)
-print(champion.championDictionaryByName)
+#print(champion.championDictionaryById)
+#print(champion.championDictionaryByName)
