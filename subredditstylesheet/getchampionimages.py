@@ -14,7 +14,9 @@ def getChampionImages():
         response = requests.get(URL)
         img = Image.open(BytesIO(response.content))
 
-        templateSavePath = 'subredditstylesheet/championimagesoriginal/{name}.png'
+
+        templateSavePath = 'subredditstylesheet/imagesoriginal/{name}.png'
         savePath = templateSavePath.format(name=name)
+
 
         img.save(savePath)
