@@ -6,7 +6,8 @@ from io import BytesIO
 
 def getChampionImages():
 
-    championDictionary = champion.championDictionary(byId=False)
+    champion.updateChampionDictionary()
+    championDictionary = champion.championDictionaryByName
 
     for name in championDictionary:
         templateURL = 'http://ddragon.leagueoflegends.com/cdn/6.14.2/img/champion/{name}.png'

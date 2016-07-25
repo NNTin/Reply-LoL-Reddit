@@ -1,10 +1,11 @@
 # coding=utf-8
 from subredditstylesheet import getchampionimages
 from subredditstylesheet import resizeimages
-from subredditstylesheet import cssgenerator
+from subredditstylesheet import cssgeneratorchampion
 from riotapi import summoner, matchlist, match, champion
 
-#resizechampionimages.resizeChampionImages()
+#getchampionimages.getChampionImages()
+#resizeimages.resizeImages()
 #cssgenerator.createSingleChampionImage()
 #cssgenerator.generateCode()
 #cssgenerator.generateTestCode()
@@ -28,6 +29,6 @@ from riotapi import summoner, matchlist, match, champion
 #    result += subResult
 #print(result[:-2])
 
-champion.updateChampionDictionary()
+#champion.updateChampionDictionary()
 #print(champion.championDictionaryById)
 #print(champion.championDictionaryByName)
