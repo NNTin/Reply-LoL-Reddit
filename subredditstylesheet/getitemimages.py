@@ -15,17 +15,23 @@ def getItemImages():
     response.connection.close()
     response = response.json()
 
+    data = response['data']
 
+    for id in data:
+        if 'name' not in data[id]:
+            continue
 
-    for id in response['data']:
         templateURL = 'https://ddragon.leagueoflegends.com/cdn/6.14.2/img/item/{id}.png'
         URL = templateURL.format(id=str(id))
         response = requests.get(URL)
         img = Image.open(BytesIO(response.content))
 
+        name = data[id]['name']
+        name = name.replace(' ', '').replace("'", '').replace(':','').lower().replace('-','').replace('(','').replace(')','').replace('.','')
 
-        templateSavePath = 'subredditstylesheet/imagesoriginal/{id}.png'
-        savePath = templateSavePath.format(id=str(id))
+        print(name)
 
+        templateSavePath = 'subredditstylesheet/imagesoriginal/{name}.png'
+        savePath = templateSavePath.format(name=str(name))
 
         img.save(savePath)

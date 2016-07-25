@@ -22,13 +22,14 @@ def createSingleImage():
         blankImage.paste(img, (0, counter * width))
         counter += 1
 
-    blankImage.save('subredditstylesheet/singleitemimage.png')
+    blankImage.save('subredditstylesheet/singlesummonerspellsimage.png')
 
 def generateCode():
-    template = '.flair-zac::before,a[href="#c-{name}"]{background-position: -{width}px -{height}px}'
+    template = 'a[href="#ss-{name}"]{background-position: -{width}px -{height}px}'
     sourcePaths = glob.glob('subredditstylesheet/imagesresized/*')
 
-    global width
+    width = 16  #items and summoner spells
+    #width = 20  #champions
 
     counter = 0
     result = ''
@@ -45,7 +46,10 @@ def generateTestCode():
     result = ''
     for path in sourcePaths:
         name = path.replace('subredditstylesheet/imagesresized\\', '').replace('.png', '').lower()
-        template = '[](#c-{name})'
+        #template = '[](#c-{name})'     #champion
+        #template = '[](#i-{name})'     #items
+        template = '[](#ss-{name})'     #summoner spells
+
         result += template.format(name=name)
     print(result)
 

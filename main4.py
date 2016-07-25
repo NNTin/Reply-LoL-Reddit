@@ -1,5 +1,5 @@
 # coding=utf-8
-from subredditstylesheet import getchampionimages, getitemimages
+from subredditstylesheet import getchampionimages, getitemimages, getsummonerspells
 from subredditstylesheet import resizeimages
 from subredditstylesheet import cssgenerator
 from riotapi import summoner, matchlist, match, champion
@@ -10,11 +10,12 @@ from riotapi import summoner, matchlist, match, champion
 #cssgenerator.generateCode()
 #cssgenerator.generateTestCode()
 
+#getsummonerspells.getSummonerSpellsImages()
 #getitemimages.getItemImages()
 #resizeimages.resizeImages()
-cssgenerator.createSingleImage()
-
-
+#cssgenerator.createSingleImage()
+#cssgenerator.generateCode()
+cssgenerator.generateTestCode()
 
 
 
