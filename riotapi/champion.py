@@ -1,6 +1,9 @@
 import requests
 from secret.riotapikey import RiotAPIKey
 
+championDictionaryById = {}
+championDictionaryByName = {}
+
 def requestChampions():
     print('[riotapi/champion] request champions...')
 
@@ -9,17 +12,15 @@ def requestChampions():
     response.connection.close()
     response = response.json()
 
-
     print('[riotapi/champion] request champion success')
 
     return response
 
-def championDictionary(byId=False):
+def updateChampionDictionary():
     data = requestChampions()
-    dictionary = {}
+    global championDictionaryById
+    global championDictionaryByName
+
     for championName in data['data']:
-        if byId == True:
-            dictionary[data['data'][championName]['id']] = championName
-        else:
-            dictionary[championName] = data['data'][championName]['id']
-    return dictionary
+        championDictionaryById[data['data'][championName]['id']] = championName
+        championDictionaryByName[championName] = data['data'][championName]['id']
