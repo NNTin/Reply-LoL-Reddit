@@ -8,6 +8,8 @@ def resizeImages():
         img = Image.open(path)
 
 
-        img = img.resize((20, 20))
+        #img = img.resize((20, 20))                  #champion flair
+        img = img.resize((16,16))                   #items
+
         path = path.replace('imagesoriginal', 'imagesresized')
         img.save(path)

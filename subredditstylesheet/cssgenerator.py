@@ -1,8 +1,12 @@
 from PIL import Image
 import glob
 
-def createSingleChampionImage():
+width = 0
+
+def createSingleImage():
     sourcePaths = glob.glob('subredditstylesheet/imagesresized/*')
+
+    global width
 
     totalHeight = 0
     for path in sourcePaths:
@@ -18,17 +22,19 @@ def createSingleChampionImage():
         blankImage.paste(img, (0, counter * width))
         counter += 1
 
-    blankImage.save('subredditstylesheet/singlechampionimage.png')
+    blankImage.save('subredditstylesheet/singleitemimage.png')
 
 def generateCode():
     template = '.flair-zac::before,a[href="#c-{name}"]{background-position: -{width}px -{height}px}'
     sourcePaths = glob.glob('subredditstylesheet/imagesresized/*')
 
+    global width
+
     counter = 0
     result = ''
     for path in sourcePaths:
         name = path.replace('subredditstylesheet/imagesresized\\', '').replace('.png', '').lower()
-        partialResult = template.replace('{name}', name).replace('{width}', '0').replace('{height}', str(counter * 20))
+        partialResult = template.replace('{name}', name).replace('{width}', '0').replace('{height}', str(counter * width))
         counter += 1
         result += partialResult + '\n'
     print(result)

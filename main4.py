@@ -1,7 +1,7 @@
 # coding=utf-8
-from subredditstylesheet import getchampionimages
+from subredditstylesheet import getchampionimages, getitemimages
 from subredditstylesheet import resizeimages
-from subredditstylesheet import cssgeneratorchampion
+from subredditstylesheet import cssgenerator
 from riotapi import summoner, matchlist, match, champion
 
 #getchampionimages.getChampionImages()
@@ -9,6 +9,15 @@ from riotapi import summoner, matchlist, match, champion
 #cssgenerator.createSingleChampionImage()
 #cssgenerator.generateCode()
 #cssgenerator.generateTestCode()
+
+#getitemimages.getItemImages()
+#resizeimages.resizeImages()
+cssgenerator.createSingleImage()
+
+
+
+
+
 #response = summoner.requestSummoner({'t1nn3r'}, region='euw', byID=False)
 
 #20267827 DAVID
