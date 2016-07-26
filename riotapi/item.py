@@ -1,5 +1,3 @@
-#https://global.api.pvp.net/api/lol/static-data/euw/v1.2/item?api_key=RGAPI-9B0F1DDB-53F4-4B10-935B-9AC8BAF7D1D8
-
 import requests
 from secret.riotapikey import RiotAPIKey
 

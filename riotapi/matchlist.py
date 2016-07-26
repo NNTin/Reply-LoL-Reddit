@@ -53,8 +53,6 @@ def requestMatchList(summonerId, region, championIds={}, seasons={}, rankedQueue
 
     URL = templateURL.format(region=region, summonerId=summonerId)
 
-    print(URL)
-
     response = requests.get(URL)
     response.connection.close()
     response = response.json()
