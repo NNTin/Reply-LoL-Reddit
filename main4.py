@@ -11,3 +11,5 @@ init.init()
 
 matchString = match.requestMatch(2634415570, 'euw')
 drmatch.drMatch(matchString)
+
+#print(matchlist.requestMatchList(20267827, 'euw'))

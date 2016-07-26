@@ -22,13 +22,17 @@ def drMatch(matchjson):
 
 
 
-
+    tableBody = ''
+    firstRun = True
     for team in teams:
-
-        table = 'Lvl | C | Name | Spells | KDA | ItemsItemsItems | Farm | Creeps | Wards (S/V) | Damage\n' \
-            '-|-|-|-|-|-|-|-|-|-|-\n'
-
-        templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
+        table = ''
+        if firstRun:
+            table = 'Lvl | C | Name | Spells | K/D/A | ItemsItemsItems | Farm | Creeps | S/V | Damage\n' \
+                ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
+            templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
+            firstRun = False
+        else:
+            table = '-|-|-|-|-|-|-|-|-|-|-\n'
 
         for participant in participants:
             if participant['teamId'] == team['teamId']:
@@ -40,6 +44,7 @@ def drMatch(matchjson):
                 spells += spellconverter.spellConverter[participant['spell2Id']]
                 kda = '%s/%s/%s' %(participant['stats']['kills'],participant['stats']['deaths'],participant['stats']['assists'])
 
+                #TODO: Implement else. Check why some item ids do not exist in itemConverter (e.g. 1331)
                 items = ''
                 if str(participant['stats']['item0']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item0'])]
                 if str(participant['stats']['item1']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item1'])]
@@ -55,5 +60,18 @@ def drMatch(matchjson):
                 damage = participant['stats']['totalDamageDealtToChampions']
 
                 table += templateTable.format(level=level, champion=champion, name=name, spells=spells, kda=kda, items=items, farm=farm, creeps=creeps, wards=wards, damage=damage)
+        tableBody += table
 
-        print(table)
+
+    #matchId matchType queueType season matchCreation
+
+    #introTemplate = 'Match ID: {matchId}; match type: {matchType}; match mode: {matchMode}, queue type: {queueType}; match creation date: {matchCreation}; match duration: {matchDuration}\n\n'
+    #intro = introTemplate.format(matchId=matchId, matchType=matchType, matchMode=matchMode, queueType=queueType, matchCreation=matchCreation, matchDuration=matchDuration)
+
+    #print(intro)
+
+    #the wings gaming WINS 27-35 @ 50 minutes
+
+    #TODO: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    introTemplate = '[**{teamWinner} wins {blueKills}-{purpleKills} @ {matchDuration}**](/#spoiler "Match ID: {matchId}; match type: {matchType}; match mode: {matchMode}, queue type: {queueType}; match creation date: {matchCreation}; match duration: {matchDuration}")\n\n'
+    print(introTemplate)
