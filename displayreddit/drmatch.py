@@ -32,8 +32,18 @@ def drMatch(matchjson):
     tableBody = ''
     firstRun = True
     for team in teams:
+
+        for participant in participants:
+            if participant['teamId'] == team['teamId']:
+
+                if firstRun:
+                    blueKills += participant['stats']['kills']
+                else:
+                    purpleKills += participant['stats']['kills']
+
         table = ''
         if firstRun:
+
             table = 'Lvl | C | Name | Spells | K/D/A | Items | Farm | Creeps | S/V | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
             templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
@@ -54,12 +64,6 @@ def drMatch(matchjson):
 
         for participant in participants:
             if participant['teamId'] == team['teamId']:
-
-                if firstRun:
-                    blueKills += participant['stats']['kills']
-                else:
-                    purpleKills += participant['stats']['kills']
-
                 level = str(participant['stats']['champLevel'])
                 champion = championconverter.championConverter[participant['championId']]
 

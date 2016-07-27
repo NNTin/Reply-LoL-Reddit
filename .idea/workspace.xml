@@ -61,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="drmatch.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="drmatch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/displayreddit/drmatch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43542436">
-              <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+            <state vertical-scroll-proportion="-4.62069">
+              <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="41" selection-end-column="64" />
               <folding>
                 <element signature="e#0#100#0" expanded="true" />
               </folding>
@@ -105,7 +105,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="riotapikey.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="riotapikey.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/secret/riotapikey.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
@@ -717,14 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/secret/riotapikey.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -753,11 +745,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/displayreddit/drmatch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43542436">
-          <caret line="36" column="60" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+        <state vertical-scroll-proportion="-4.62069">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="41" selection-end-column="64" />
           <folding>
             <element signature="e#0#100#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/secret/riotapikey.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
