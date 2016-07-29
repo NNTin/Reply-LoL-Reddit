@@ -7,4 +7,4 @@ def updateSpellConverter():
 
     template = '[](#ss-{name})'
     for spellId in spellDictionaryById:
-        spellConverter[spellId] = template.format(name=spellDictionaryById[spellId].lower())
+        spellConverter[spellId] = template.format(name=spellDictionaryById[spellId])

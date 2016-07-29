@@ -24,6 +24,8 @@ def updateSpellDictionary():
 
     data = response['data']
     for spellName in data:
-        spellDictionaryByName[spellName] = data[spellName]['id']
-        spellDictionaryById[data[spellName]['id']] = spellName
+        name = data[spellName]['name'].replace('!','').replace(' ','').lower()
+
+        spellDictionaryByName[name] = data[spellName]['id']
+        spellDictionaryById[data[spellName]['id']] = name
 

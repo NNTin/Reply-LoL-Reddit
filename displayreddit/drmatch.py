@@ -1,7 +1,12 @@
 from converter import championconverter, itemconverter, spellconverter, timeconverter, gameconstants
 from converter.timeconverter import unixTimeConverter, durationTimeConverter
 
+hoverToView = False
+
 def drMatch(matchjson):
+    print(matchjson)
+
+    region = matchjson['region']
     matchId = matchjson['matchId']
     matchType = gameconstants.matchType[matchjson['matchType']]
     matchMode = gameconstants.matchMode[matchjson['matchMode']]
@@ -118,10 +123,11 @@ def drMatch(matchjson):
         tableBody += table
 
 
+    introTemplate = ''
+    if hoverToView: introTemplate += '####&#009;\n#####&#009; Hover to view match ID: {matchId} played on {region}\n######&#009;\n'
+    introTemplate += '[**{teamWinner} wins {blueKills}-{purpleKills} @ {matchDuration}**](/#spoiler "Match ID: {matchId}; match type: {matchType}; match mode: {matchMode}, queue type: {queueType}; match creation date: {matchCreation}; match duration: {matchDuration}; region: {region}")\n\n'
 
-    introTemplate = '[**{teamWinner} wins {blueKills}-{purpleKills} @ {matchDuration}**](/#spoiler "Match ID: {matchId}; match type: {matchType}; match mode: {matchMode}, queue type: {queueType}; match creation date: {matchCreation}; match duration: {matchDuration}")\n\n'
-
-    intro = introTemplate.format(teamWinner=teamWinner, blueKills=blueKills, purpleKills=purpleKills, matchId=matchId, matchType=matchType, matchMode=matchMode, queueType=queueType, matchCreation=matchCreation, matchDuration=matchDuration)
+    intro = introTemplate.format(region=region, teamWinner=teamWinner, blueKills=blueKills, purpleKills=purpleKills, matchId=matchId, matchType=matchType, matchMode=matchMode, queueType=queueType, matchCreation=matchCreation, matchDuration=matchDuration)
 
 
     return (intro + tableBody)

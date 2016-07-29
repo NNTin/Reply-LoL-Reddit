@@ -15,9 +15,12 @@ def getSummonerSpellsImages():
 
     print(data)
 
-    for name in data:
+    for spellName in data:
+        name = data[spellName]['name'].replace('!','').replace(' ','').lower()
+
+
         templateURL = 'https://ddragon.leagueoflegends.com/cdn/6.14.2/img/spell/{name}.png'
-        URL = templateURL.format(name=name)
+        URL = templateURL.format(name=spellName)
         response = requests.get(URL)
         img = Image.open(BytesIO(response.content))
 
