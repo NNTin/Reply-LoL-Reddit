@@ -1,5 +1,5 @@
-SUBREDDIT = "ReplyLoLReddit"
-#SUBREDDIT = "AnalyzeLast100Games+Dota2+LearnDota2"
+#SUBREDDIT = "ReplyLoLReddit"
+SUBREDDIT = "leagueoflegends"
 # This is the sub or list of subs to scan for new posts. For a single sub, use "sub1". For multiple subreddits, use "sub1+sub2+sub3+..."
 KEYWORDS = ["matches/", "players/"]
 # These are the words you are looking for
@@ -16,4 +16,3 @@ CLEANCYCLES = 10
 # Keeping only the latest (2*MAXPOSTS) items
 
 APP_UA = 'LoL responder made by /u/lumbdi'              #user agent (please change yours)
-BOTNAME = 'Reply-LoL-Reddit'

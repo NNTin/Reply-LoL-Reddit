@@ -1,15 +1,34 @@
 # coding=utf-8
 import init
-import praw, OAuth2Util
-from converter import championconverter, itemconverter, spellconverter
-from riotapi import matchlist, match, spell
-from displayreddit import drmatch, drouttro
+import threading
+from reddit import loginreddit
+from thread.findcomments import findComments
 
-init.init()
+if __name__ == "__main__":
 
-#20267827 David
-#2634415570 match 2770739260
+	print('[main] logging into reddit')
+	loginreddit.loginReddit()
 
-matchString = match.requestMatch(2634415570, 'euw')
-print(drmatch.drMatch(matchString) + drouttro.getOuttro())
+	print('[main] initialize dictionaries and converters (champion, item, spell')
+	#init.init()
+
+	r = loginreddit.r
+	print('[main] starting findcomments thread')
+	t = threading.Thread(target=findComments, args = (r,))
+	t.start()
+
+
+
+
+
+	#20267827 David
+	#2634415570 match 2770739260
+
+	#matchString = match.requestMatch(2770739260, 'euw')
+	#print(drmatch.drMatch(matchString) + drouttro.getOuttro())
+
+	#champion.updateChampionDictionary()
+	#championconverter.updateChampionConverter()
+	#dict = championconverter.championConverter
+
 
