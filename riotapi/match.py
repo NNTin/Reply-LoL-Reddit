@@ -14,6 +14,8 @@ def requestMatch(matchId, region, includeTimeline=False):
 
     URL = templateURL.format(region=region, matchId=matchId )
 
+    print(URL)
+
     response = requests.get(URL)
     response.connection.close()
     response = response.json()

@@ -1,10 +1,14 @@
 import time
 import sqlite3
-import thread
+import threading
+from reddit import loginreddit
 from reddit.redditconfig import SUBREDDIT, KEYWORDS, IGNOREAUTHORS, PRIVILEDGEDAUTHORS, MAXPOSTS, WAIT, CLEANCYCLES
-#from thread import analyzecontent
+from thread import answerpost
 
-def findComments(r):
+#def findComments(r):
+def findComments():
+    r = loginreddit.r
+
     subreddit = r.get_subreddit(SUBREDDIT)
 
     cycles = 0
@@ -15,11 +19,13 @@ def findComments(r):
 
     time.sleep(2)
 
-    while True:
+    #while True:
+    if True:
         try:
             print('[thread/findcomments] Searching %s' %SUBREDDIT)
 
             posts = list(subreddit.get_comments(limit=MAXPOSTS))
+            #posts = list(subreddit.get_comments(limit=None))
             posts.reverse()
 
             for post in posts:
@@ -50,12 +56,15 @@ def findComments(r):
                 pbody = post.body.lower()
                 if any(key.lower() in pbody for key in KEYWORDS):
                     try:
-                        linkToComment = "https://reddit.com/comments/" + post.link_id[3:] + "//" + post.id + "?context=10"
-                        print('[thread/findcomments] starting analyzecontent thread on comment %s' %linkToComment)
+                        #linkToComment = "https://reddit.com/comments/" + post.link_id[3:] + "//" + post.id + "?context=10"
+                        #print('[thread/findcomments] starting answercomment thread on comment %s' %linkToComment)
+
+                        t = threading.Thread(target=answerpost.analyzePost, args = (post,))
+                        t.start()
 
                         #TODO: write analyze content thread
                     except:
-                        print('@ [thread/findcomments] analyzecontent thread crashed!')
+                        print('@ [thread/findcomments] answercomment thread crashed!')
             cycles += 1
 
         except:

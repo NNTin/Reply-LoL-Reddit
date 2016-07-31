@@ -4,8 +4,6 @@ from converter.timeconverter import unixTimeConverter, durationTimeConverter
 hoverToView = False
 
 def drMatch(matchjson):
-    print(matchjson)
-
     region = matchjson['region']
     matchId = matchjson['matchId']
     matchType = gameconstants.matchType[matchjson['matchType']]

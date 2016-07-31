@@ -25,17 +25,27 @@
         <entry file="file://$PROJECT_DIR$/reddit/redditconfig.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="findcomments.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/thread/findcomments.py">
+      <file leaf-file-name="loginreddit.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reddit/loginreddit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5831874">
-              <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="findposts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/thread/findposts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -43,11 +53,53 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="answerpost.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/thread/answerpost.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2977233">
+              <caret line="10" column="168" selection-start-line="10" selection-start-column="168" selection-end-line="10" selection-end-column="168" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="match.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/riotapi/match.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.206897">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drmatch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/displayreddit/drmatch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.3448277">
+              <caret line="5" column="10" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drouttro.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/displayreddit/drouttro.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.5555553">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+            <state vertical-scroll-proportion="-6.9259257">
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
               <folding>
                 <element signature="e#15#26#0" expanded="true" />
               </folding>
@@ -83,15 +135,12 @@
         <option value="$PROJECT_DIR$/riotapi/item.py" />
         <option value="$PROJECT_DIR$/converter/initializeconverters.py" />
         <option value="$PROJECT_DIR$/init.py" />
-        <option value="$PROJECT_DIR$/riotapi/match.py" />
         <option value="$PROJECT_DIR$/riotapi/matchlist.py" />
         <option value="$PROJECT_DIR$/converter/summonerconverter.py" />
         <option value="$PROJECT_DIR$/converter/matchconverter.py" />
         <option value="$PROJECT_DIR$/converter/timeconverter.py" />
         <option value="$PROJECT_DIR$/secret/riotapikey.py" />
         <option value="$PROJECT_DIR$/converter/gameconstants.py" />
-        <option value="$PROJECT_DIR$/displayreddit/drouttro.py" />
-        <option value="$PROJECT_DIR$/displayreddit/drmatch.py" />
         <option value="$PROJECT_DIR$/oauth.ini" />
         <option value="$PROJECT_DIR$/main4.py" />
         <option value="$PROJECT_DIR$/converter/spellconverter.py" />
@@ -99,9 +148,15 @@
         <option value="$PROJECT_DIR$/subredditstylesheet/getsummonerspells.py" />
         <option value="$PROJECT_DIR$/reddit/loginreddit.py" />
         <option value="$PROJECT_DIR$/thread/findcomment.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/thread/answercomment.py" />
         <option value="$PROJECT_DIR$/thread/findcomments.py" />
         <option value="$PROJECT_DIR$/reddit/redditconfig.py" />
+        <option value="$PROJECT_DIR$/displayreddit/drouttro.py" />
+        <option value="$PROJECT_DIR$/thread/findposts.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/displayreddit/drmatch.py" />
+        <option value="$PROJECT_DIR$/riotapi/match.py" />
+        <option value="$PROJECT_DIR$/thread/answerpost.py" />
       </list>
     </option>
   </component>
@@ -408,11 +463,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18878166" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -425,7 +481,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -437,11 +492,48 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/reddit/redditconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="79" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/findposts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/answerpost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/secret/riotapikey.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -505,7 +597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="55" selection-start-line="0" selection-start-column="55" selection-end-line="0" selection-end-column="55" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -554,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,26 +707,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/riotapi/match.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/displayreddit/drouttro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="85" selection-start-line="6" selection-start-column="85" selection-end-line="6" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/secret/riotapikey.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="14" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -654,19 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/converter/spellconverter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Python/Lib/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274958">
           <caret line="2308" column="0" selection-start-line="2308" selection-start-column="0" selection-end-line="2308" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82758623">
           <caret line="24" column="19" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -695,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05954466">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -703,17 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/displayreddit/drmatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="16" selection-start-line="98" selection-start-column="16" selection-end-line="98" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#100#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="79" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="79" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,9 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,17 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reddit/loginreddit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08931699">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#23#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -757,7 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274958">
           <caret line="1170" column="8" selection-start-line="1170" selection-start-column="8" selection-end-line="1170" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -765,36 +800,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274958">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/converter/spellconverter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5555553">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#15#26#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.11908932">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reddit/redditconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/thread/findcomments.py">
+    <entry file="file://$PROJECT_DIR$/displayreddit/drouttro.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5831874">
-          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reddit/loginreddit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/findposts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/displayreddit/drmatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.3448277">
+          <caret line="5" column="10" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/riotapi/match.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.206897">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.9259257">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#15#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thread/answerpost.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2977233">
+          <caret line="10" column="168" selection-start-line="10" selection-start-column="168" selection-end-line="10" selection-end-column="168" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
