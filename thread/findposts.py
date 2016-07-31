@@ -19,8 +19,8 @@ def findComments():
 
     time.sleep(2)
 
-    #while True:
-    if True:
+    while True:
+    #if True:
         try:
             print('[thread/findcomments] Searching %s' %SUBREDDIT)
 

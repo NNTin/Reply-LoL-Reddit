@@ -96,19 +96,19 @@ def drMatch(matchjson):
                 #TODO: Implement else. Check why some item ids do not exist in itemConverter (e.g. 1331)
                 items = ''
                 if str(participant['stats']['item0']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item0'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item0']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item0']))
                 if str(participant['stats']['item1']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item1'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item1']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item1']))
                 if str(participant['stats']['item2']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item2'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item2']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item2']))
                 if str(participant['stats']['item3']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item3'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item3']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item3']))
                 if str(participant['stats']['item4']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item4'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item4']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item4']))
                 if str(participant['stats']['item5']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item5'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item5']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item5']))
                 if str(participant['stats']['item6']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item6'])]
-                else: print('Item ID not found: ' + str(participant['stats']['item6']))
+                #else: print('Item ID not found: ' + str(participant['stats']['item6']))
 
                 farm = participant['stats']['goldEarned']
                 creeps = participant['stats']['minionsKilled'] + participant['stats']['neutralMinionsKilledTeamJungle'] + participant['stats']['neutralMinionsKilledEnemyJungle']
