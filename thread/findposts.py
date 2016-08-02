@@ -56,8 +56,8 @@ def findComments():
                 pbody = post.body.lower()
                 if any(key.lower() in pbody for key in KEYWORDS):
                     try:
-                        #linkToComment = "https://reddit.com/comments/" + post.link_id[3:] + "//" + post.id + "?context=10"
-                        #print('[thread/findcomments] starting answercomment thread on comment %s' %linkToComment)
+                        linkToComment = "https://reddit.com/comments/" + post.link_id[3:] + "//" + post.id + "?context=10"
+                        print('[thread/findcomments] found post, analyzing post... %s' %linkToComment)
 
                         t = threading.Thread(target=answerpost.analyzePost, args = (post,))
                         t.start()

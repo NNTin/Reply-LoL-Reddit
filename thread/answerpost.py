@@ -3,12 +3,7 @@ from riotapi import match
 from displayreddit import drmatch, drouttro
 from reddit import loginreddit
 
-sampleString = 'http://matchhistory.euw.leagueoflegends.com/en/#match-details/EUW1/2776212251/23337069? \n' \
-               'http://www.lolking.net/summoner/euw/20267827#matches/2776212251 \n' \
-               'http://www.lolskill.net/match/EUW/2776212251 \n' \
-               'http://lolprofile.net/summoner/euw/RG%20Markal \n'
-
-patternsMatchId = ['matchhistory\.(?P<region>\w+)\.leagueoflegends\.(?P<domain>\w+)/(?P<language>\w+)/#match-details/(?P<region2>\w+)/(?P<matchid>\w+)/(?P<playerid>\w+)', #leagueoflegends.com
+patternsMatchId = ['matchhistory\.(?P<region>\w+)\.leagueoflegends\.(?P<domain>\w+)/(?P<language>\w+)/#match-details/(?P<region2>\w+)/(?P<matchid>\w+)', #leagueoflegends.com
             'lolking.net/summoner/(?P<region>\w+)/(?P<playerid>\w+)#matches/(?P<matchid>\w+)', #lolking.net
             'lolskill.net/match/(?P<region>\w+)/(?P<matchid>\w+)'] #lolskill.net
 
@@ -40,6 +35,7 @@ def analyzePost(post):
 def answerPost(post, response):
     response = response + drouttro.ending
 
+
     i = 0
     while i < 20:
         i += 1
@@ -47,7 +43,8 @@ def answerPost(post, response):
             answeredPost = post.reply(response)
             print('[thread/answerpost] successfully answered post')
 
-            addDeletionLinkToPost(answeredPost)
+            #TODO: add worker delete comments
+            #addDeletionLinkToPost(answeredPost)
 
             break
         except:

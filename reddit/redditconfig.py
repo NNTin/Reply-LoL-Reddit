@@ -1,7 +1,7 @@
 #SUBREDDIT = "ReplyLoLReddit"
 SUBREDDIT = "leagueoflegends"
 # This is the sub or list of subs to scan for new posts. For a single sub, use "sub1". For multiple subreddits, use "sub1+sub2+sub3+..."
-KEYWORDS = ["match-history", "matchhistory", "match-details", "/match", "match/", "#match", "match"]
+KEYWORDS = ["match-history", "matchhistory", "match-details", "/match", "match/", "#match"]
 # These are the words you are looking for
 IGNOREAUTHORS = []
 # Ignore these authors fdsfjkl

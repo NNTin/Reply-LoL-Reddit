@@ -2,7 +2,7 @@ from reddit import loginreddit
 
 
 ending = '---\n' \
-         '[^^source](https://github.com/NNTin/Reply-LoL-Reddit) ^^on ^^github, ^^testing'
+         '[^^source](https://github.com/NNTin/Reply-LoL-Reddit) ^^on ^^github'
 
 def getDeletionLink(post):
     r = loginreddit.r
