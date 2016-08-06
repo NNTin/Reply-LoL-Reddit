@@ -1,15 +1,15 @@
 import re, time
-from riotapi import match
+from riotapi import match, game
 from displayreddit import drmatch, drouttro
-from reddit import loginreddit
 
-patternsMatchId = ['matchhistory\.(?P<region>\w+)\.leagueoflegends\.(?P<domain>\w+)/(?P<language>\w+)/#match-details/(?P<region2>\w+)/(?P<matchid>\w+)', #leagueoflegends.com
-            'lolking.net/summoner/(?P<region>\w+)/(?P<playerid>\w+)#matches/(?P<matchid>\w+)', #lolking.net
-            'lolskill.net/match/(?P<region>\w+)/(?P<matchid>\w+)'] #lolskill.net
 
 def analyzePost(post):
     #Checking for match id link
-    for pattern in patternsMatchId:
+    patternsMatch = ['matchhistory\.(?P<region>\w+)\.leagueoflegends\.(?P<domain>\w+)/(?P<language>\w+)/#match-details/(?P<region2>\w+)/(?P<matchid>\w+)', #leagueoflegends.com
+            'lolking.net/summoner/(?P<region>\w+)/(?P<playerid>\w+)#matches/(?P<matchid>\w+)', #lolking.net
+            'lolskill.net/match/(?P<region>\w+)/(?P<matchid>\w+)'] #lolskill.net
+
+    for pattern in patternsMatch:
         patternMatch = re.search(pattern, post.body, re.I)
         if patternMatch != None:
             linkToComment = ''
@@ -30,6 +30,33 @@ def analyzePost(post):
                 return
             except:
                 print('[thread/answercomment] reply to comment fail: %s' %linkToComment)
+
+    patternsGame = ['acs\.leagueoflegends\.com/(?P<version>\w+)/stats/game/(?P<platformid>\w+)/(?P<matchid>\w+)\?gamehash=(?P<gamehash>\w+)',
+                    'matchhistory\.(?P<region>\w+)\.leagueoflegends\.com/(?P<language>\w+)/#match-details/(?P<platformid>\w+)/(?P<matchid>\w+)\?gameHash=(?P<gamehash>\w+)']
+
+    for pattern in patternsGame:
+        patternGame = re.search(pattern, post.body, re.I)
+        if patternGame != None:
+            linkToComment = ''
+            try:
+                linkToComment = "https://reddit.com/comments/" + post.link_id[3:] + "//" + post.id + "?context=10"
+                print('[thread/answercomment] attempt to answer to comment: %s' %linkToComment)
+
+                gameHash = patternGame.group('gamehash')
+                platformId = patternGame.group('platformid')
+                matchId = patternGame.group('matchid')
+
+
+                #do match analysis
+                matchjson = game.requestGame(matchId, platformId, gameHash)
+                response = drmatch.drMatch(matchjson)
+
+                answerPost(post, response)
+
+                return
+            except:
+                print('[thread/answercomment] reply to comment fail: %s' %linkToComment)
+
 
 
 def answerPost(post, response):

@@ -8,8 +8,8 @@ def drMatch(matchjson):
     matchId = matchjson['matchId']
     matchType = gameconstants.matchType[matchjson['matchType']]
     matchMode = gameconstants.matchMode[matchjson['matchMode']]
-    queueType = gameconstants.queueTypeByNameId[matchjson['queueType']]['name']
-    season = gameconstants.season[matchjson['season']]
+    queueType = gameconstants.queueTypeByName[matchjson['queueType']]['name']
+    #season = gameconstants.season[matchjson['season']]             #TODO: solve gametomatchconverter.py first!
 
     matchCreation = unixTimeConverter(matchjson['matchCreation'])
     matchDuration = durationTimeConverter(matchjson['matchDuration'])
