@@ -52,7 +52,7 @@ def drMatch(matchjson):
             templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
             firstRun = False
             if playerMissing:
-                table = 'Lvl | C | Spells | K/D/A | ItemsItemsItems | Farm | Creeps | S/V | Damage\n' \
+                table = 'Lvl | C | Spells | K/D/A | Items | Farm | Creeps | S/V | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
                 templateTable = '{level} | {champion} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
             if team['winner']:
@@ -73,12 +73,6 @@ def drMatch(matchjson):
                 name = ''
                 if not playerMissing:
                     name = participant['player']['summonerName']
-
-
-                #spells  = spellconverter.spellConverter[participant['spell1Id']]
-                #spells += spellconverter.spellConverter[participant['spell2Id']]
-                #spells = participant['spell1Id']
-                #spells += participant['spell2Id']
 
                 spells = ''
                 if participant['spell1Id'] in spellconverter.spellConverter.keys():

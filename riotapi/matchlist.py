@@ -1,8 +1,8 @@
-import requests
 from secret.riotapikey import RiotAPIKey
 from riotapi.validparameters import validSeasons, validRankedQueues, validRegions
+from riotapi.apihandler import getJsonFromURL
 
-def requestMatchList(summonerId, region, championIds={}, seasons={}, rankedQueues={}, beginTime=-1, endTime=-1, beginIndex=-1, endIndex=-1):
+def requestMatchList(summonerId, region, championIds={}, seasons={}, rankedQueues={}, beginTime=-1, endTime=-1, beginIndex=-1, endIndex=-1, cleanUp=True):
     region = str(region).lower()
     if region not in validRegions:
         print('[riotapi/summoner] %s is not a valid region' %region)
@@ -30,19 +30,20 @@ def requestMatchList(summonerId, region, championIds={}, seasons={}, rankedQueue
         else:
             print('[riotapi/matchlist] invalid beginTime parameter was given, should not happen')
 
-    if beginTime is not -1:
+    if endTime is not -1:
         if isinstance(endTime, int) and endTime > 0:
             additionalSearchParameters += '&endTime=' + str(endTime)
         else:
             print('[riotapi/matchlist] invalid endTime parameter was given, should not happen')
 
-    if beginTime is not -1:
-        if isinstance(beginIndex, int) and beginIndex > 0:
+    if beginIndex is not -1:
+        if isinstance(beginIndex, int) and beginIndex > -1:
+
             additionalSearchParameters += '&beginIndex=' + str(beginIndex)
         else:
             print('[riotapi/matchlist] invalid beginIndex parameter was given, should not happen')
 
-    if beginTime is not -1:
+    if endIndex is not -1:
         if isinstance(endIndex, int) and endIndex > 0:
             additionalSearchParameters += '&endIndex=' + str(endIndex)
         else:
@@ -52,12 +53,20 @@ def requestMatchList(summonerId, region, championIds={}, seasons={}, rankedQueue
     templateURL = 'https://{region}.api.pvp.net/api/lol/{region}/v2.2/matchlist/by-summoner/{summonerId}?api_key=' + RiotAPIKey + additionalSearchParameters
 
     URL = templateURL.format(region=region, summonerId=summonerId)
+    print(URL)
 
-    response = requests.get(URL)
-    response.connection.close()
-    response = response.json()
+    response = getJsonFromURL(URL, 5)
 
-    return response
+    #RITO WHY: https://i.imgur.com/rfrD1i9.png
+    if not cleanUp:
+        return response
+    else:
+        for match in response['matches']:
+            if match['lane'] == 'MIDDLE':
+                match['lane'] = 'MID'
+            if match['lane'] == 'BOTTOM':
+                match['lane'] = 'BOT'
+        return response
 
 
 def dictIsNotEmpty(dict):

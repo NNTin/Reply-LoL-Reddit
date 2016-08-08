@@ -1,6 +1,6 @@
-import requests
 from secret.riotapikey import RiotAPIKey
 from riotapi.validparameters import validRegions
+from riotapi.apihandler import getJsonFromURL
 
 def requestSummoner(summoners, region, byID=True):
     region = str(region).lower()
@@ -22,9 +22,7 @@ def requestSummoner(summoners, region, byID=True):
     URL = templateURL.format(region=region, summoners=summoners)
 
 
-    response = requests.get(URL)
-    response.connection.close()
-    response = response.json()
+    response = getJsonFromURL(URL, 10, 2)
 
     return response
 

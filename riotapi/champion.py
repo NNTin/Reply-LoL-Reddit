@@ -1,5 +1,5 @@
-import requests
 from secret.riotapikey import RiotAPIKey
+from riotapi.apihandler import getJsonFromURL
 
 championDictionaryById = {}
 championDictionaryByName = {}
@@ -8,9 +8,7 @@ def requestChampions():
     print('[riotapi/champion] request champions...')
 
     URL = "https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?api_key=" + RiotAPIKey
-    response = requests.get(URL)
-    response.connection.close()
-    response = response.json()
+    response = getJsonFromURL(URL, 10, 2)
 
     print('[riotapi/champion] request champion success')
 
@@ -22,5 +20,5 @@ def updateChampionDictionary():
     global championDictionaryByName
 
     for championName in data['data']:
-        championDictionaryById[data['data'][championName]['id']] = championName
-        championDictionaryByName[championName] = data['data'][championName]['id']
+        championDictionaryById[data['data'][championName]['id']] = data['data'][championName]['name']
+        championDictionaryByName[data['data'][championName]['name']] = data['data'][championName]['id']

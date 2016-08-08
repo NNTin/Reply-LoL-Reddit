@@ -1,5 +1,5 @@
-import requests
 from converter import gametomatchconverter
+from riotapi.apihandler import getJsonFromURL
 
 def requestGame(matchId, platformId, gameHash, inMatchFormat=True):
     platformId = str(platformId)
@@ -10,9 +10,7 @@ def requestGame(matchId, platformId, gameHash, inMatchFormat=True):
 
     print(URL)
 
-    response = requests.get(URL)
-    response.connection.close()
-    response = response.json()
+    response = getJsonFromURL(URL, 10, 2)
 
     if inMatchFormat:
         return gametomatchconverter.gameToMatchConverter(response)

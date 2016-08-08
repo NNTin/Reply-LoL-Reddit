@@ -1,12 +1,12 @@
-import requests
 from secret.riotapikey import RiotAPIKey
 from riotapi.validparameters import validRegions
+from riotapi.apihandler import getJsonFromURL
 
 
 def requestMatch(matchId, region, includeTimeline=False):
     region = str(region).lower()
     if region not in validRegions:
-        print('[riotapi/summoner] %s is not a valid region' %region)
+        print('[riotapi/match] %s is not a valid region' %region)
         return
 
     additionalSearchParameters = '&includeTimeLine=' + str(includeTimeline)
@@ -17,8 +17,10 @@ def requestMatch(matchId, region, includeTimeline=False):
 
     print(URL)
 
-    response = requests.get(URL)
-    response.connection.close()
-    response = response.json()
+    return getJsonFromURL(URL, 5)
 
-    return response
+
+
+def requestMatchThreaded(matchId, region, q, includeTimeLine=False):
+    result = requestMatch(matchId=matchId, region=region, includeTimeline=includeTimeLine)
+    q.put(result)
