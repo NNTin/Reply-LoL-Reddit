@@ -20,5 +20,8 @@ def updateChampionDictionary():
     global championDictionaryByName
 
     for championName in data['data']:
-        championDictionaryById[data['data'][championName]['id']] = data['data'][championName]['name']
-        championDictionaryByName[data['data'][championName]['name']] = data['data'][championName]['id']
+        tmpName = data['data'][championName]['name']
+        tmpName = tmpName.replace(' ', '')
+
+        championDictionaryById[data['data'][championName]['id']] = tmpName
+        championDictionaryByName[tmpName] = data['data'][championName]['id']
