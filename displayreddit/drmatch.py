@@ -47,14 +47,14 @@ def drMatch(matchjson):
         table = ''
         if firstRun:
 
-            table = 'Lvl | C | Name | Spells | K/D/A | Items | Farm | Creeps | S/V | Damage\n' \
+            table = 'Lvl | C | Name | Spells | K/D/A | Items | Gold | Creeps | S/V | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
-            templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
+            templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {gold} | {creeps} | {wards} | {damage}\n'
             firstRun = False
             if playerMissing:
-                table = 'Lvl | C | Spells | K/D/A | Items | Farm | Creeps | S/V | Damage\n' \
+                table = 'Lvl | C | Spells | K/D/A | Items | Gold | Creeps | S/V | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
-                templateTable = '{level} | {champion} | {spells} | {kda} | {items} | {farm} | {creeps} | {wards} | {damage}\n'
+                templateTable = '{level} | {champion} | {spells} | {kda} | {items} | {gold} | {creeps} | {wards} | {damage}\n'
             if team['winner']:
                 teamWinner = 'Blue'
             else:
@@ -104,12 +104,12 @@ def drMatch(matchjson):
                 if str(participant['stats']['item6']) in itemconverter.itemConverter: items += itemconverter.itemConverter[str(participant['stats']['item6'])]
                 #else: print('Item ID not found: ' + str(participant['stats']['item6']))
 
-                farm = participant['stats']['goldEarned']
+                gold = participant['stats']['goldEarned']
                 creeps = participant['stats']['minionsKilled'] + participant['stats']['neutralMinionsKilledTeamJungle'] + participant['stats']['neutralMinionsKilledEnemyJungle']
                 wards = '%s/%s' %(participant['stats']['sightWardsBoughtInGame'], participant['stats']['visionWardsBoughtInGame'])
                 damage = participant['stats']['totalDamageDealtToChampions']
 
-                table += templateTable.format(level=level, champion=champion, name=name, spells=spells, kda=kda, items=items, farm=farm, creeps=creeps, wards=wards, damage=damage)
+                table += templateTable.format(level=level, champion=champion, name=name, spells=spells, kda=kda, items=items, gold=gold, creeps=creeps, wards=wards, damage=damage)
 
 
         tableBody += table
