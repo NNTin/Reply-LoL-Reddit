@@ -58,7 +58,7 @@ def drMatch(matchjson):
             if team['winner']:
                 teamWinner = 'Blue'
             else:
-                teamWinner = 'Purple'
+                teamWinner = 'Red'
 
 
 
