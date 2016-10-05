@@ -47,12 +47,12 @@ def drMatch(matchjson):
         table = ''
         if firstRun:
 
-            table = 'Lvl | C | Name | Spells | K/D/A | Items | Gold | Creeps | S/V | Damage\n' \
+            table = 'Lvl | C | Name | Spells | K/D/A | Items | Gold | Creeps | Wards | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
             templateTable = '{level} | {champion} | {name} | {spells} | {kda} | {items} | {gold} | {creeps} | {wards} | {damage}\n'
             firstRun = False
             if playerMissing:
-                table = 'Lvl | C | Spells | K/D/A | Items | Gold | Creeps | S/V | Damage\n' \
+                table = 'Lvl | C | Spells | K/D/A | Items | Gold | Creeps | Wards | Damage\n' \
                 ':-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:\n'
                 templateTable = '{level} | {champion} | {spells} | {kda} | {items} | {gold} | {creeps} | {wards} | {damage}\n'
             if team['winner']:
@@ -106,7 +106,7 @@ def drMatch(matchjson):
 
                 gold = participant['stats']['goldEarned']
                 creeps = participant['stats']['minionsKilled'] + participant['stats']['neutralMinionsKilledTeamJungle'] + participant['stats']['neutralMinionsKilledEnemyJungle']
-                wards = '%s/%s' %(participant['stats']['sightWardsBoughtInGame'], participant['stats']['visionWardsBoughtInGame'])
+                wards = '%s' %(participant['stats']['sightWardsBoughtInGame'] + participant['stats']['visionWardsBoughtInGame'])
                 damage = participant['stats']['totalDamageDealtToChampions']
 
                 table += templateTable.format(level=level, champion=champion, name=name, spells=spells, kda=kda, items=items, gold=gold, creeps=creeps, wards=wards, damage=damage)
