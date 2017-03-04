@@ -16,7 +16,7 @@ statsNames = ['kills','deaths','assists','goldEarned','minionsKilled','neutralMi
 
 #DUO, NONE, SOLO, DUO_CARRY, DUO_SUPPORT
 
-def averageAnalyzeYou(summonerId, region, roles=[], championIds={}, seasons={}, rankedQueues={}, beginTime=-1, endTime=-1, beginIndex=0, endIndex=100, cleanUp=True):
+def averageAnalyze(summonerId, region, roles=[], championIds={}, seasons={}, rankedQueues={}, beginTime=-1, endTime=-1, beginIndex=0, endIndex=2, cleanUp=True):
     matchlistjson = matchlist.requestMatchList(summonerId=summonerId, region=region, championIds=championIds, seasons=seasons, rankedQueues=rankedQueues, beginTime=beginTime, endTime=endTime, beginIndex=beginIndex, endIndex=endIndex, cleanUp=cleanUp)
 
     analyzeRoleDictionary = {}
@@ -64,11 +64,26 @@ def averageAnalyzeYou(summonerId, region, roles=[], championIds={}, seasons={}, 
     cleanMatches = []
     for match in matches:
         if 'status' in match:
-            print('FUCKING EW')
+            print('[botcommand/averageanalyze] Check match API. This should not happen.')
         else:
             cleanMatches.append(match)
 
     matches = cleanMatches
+
+
+    participants = {}
+    participantNames = {'you',
+                        {'allyTeam' : {'SoloTop', 'SoloMid', 'Jungle', 'SupportBot', 'CarryBot', 'all'}},
+                        {'enemyTeam': {'SoloTop', 'SoloMid', 'Jungle', 'SupportBot', 'CarryBot', 'all'}}}
+
+    for participantName in participantNames:
+        print(participantName)
+
+
+
+
+
+
 
     participantYou = {'items': {}, 'spells': {}, 'champions': {}, 'stats': {}}
     for statName in statsNames: participantYou['stats'][statName] = 0
@@ -81,12 +96,15 @@ def averageAnalyzeYou(summonerId, region, roles=[], championIds={}, seasons={}, 
         tmp = extractParticipantStatsFromMatch(championId, match)
         participantYou = addParticipantStatsTogether(participantYou, tmp)
 
-    participantYou = averageParticipantStats(participantYou, len(customMatchlist))
 
 
+    matchesPlayed = sum(len(values) for values in analyzeRoleDictionary.values())
+    participantYou = averageParticipantStats(participantYou, matchesPlayed)
 
     general = {'summonerId': summonerId}
 
+    #participantsAllyTeam, participantsEnemyTeam
+    #participantSoloTop, etc for each team
 
     return (analyzeRoleDictionary, participantYou, general)
 
@@ -151,6 +169,10 @@ def addParticipantStatsTogether(participantStatsA, participantStatsB):
 
 def getChampionIdByRole(role):
     print('returns the champion id based on role in match')
+
+
+def getChampionIdsFromTeam(summonerId, teamTogether=True):
+    print('returns multiple championIds')
 
 def getChampionIdBySummonerId(summonerId, match):
     participantId = -1

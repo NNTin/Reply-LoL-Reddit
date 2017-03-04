@@ -1,5 +1,6 @@
 #SUBREDDIT = "ReplyLoLReddit"
 SUBREDDIT = "leagueoflegends"
+#SUBREDDIT= "LumbdiTest"
 # This is the sub or list of subs to scan for new posts. For a single sub, use "sub1". For multiple subreddits, use "sub1+sub2+sub3+..."
 KEYWORDS = ["match-history", "matchhistory", "match-details", "/match", "match/", "#match", "gameHash"]
 # These are the words you are looking for

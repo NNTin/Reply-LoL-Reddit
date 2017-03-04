@@ -1,56 +1,38 @@
 import time
-import sqlite3
 import threading
 from reddit import loginreddit
-from reddit.redditconfig import SUBREDDIT, KEYWORDS, IGNOREAUTHORS, PRIVILEDGEDAUTHORS, MAXPOSTS, WAIT, CLEANCYCLES
+from reddit.redditconfig import SUBREDDIT, KEYWORDS, IGNOREAUTHORS, PRIVILEDGEDAUTHORS, MAXPOSTS, WAIT
 from thread import answerpost
 
 #def findComments(r):
 def findComments():
     r = loginreddit.r
 
-    subreddit = r.get_subreddit(SUBREDDIT)
+    subreddit = r.subreddit(SUBREDDIT)
 
-    cycles = 0
-
-    sql = sqlite3.connect('scannedcomments.db')
-    cur = sql.cursor()
-    cur.execute('CREATE TABLE IF NOT EXISTS oldposts(id TEXT)')
 
     time.sleep(2)
 
     while True:
-    #if True:
         try:
             print('[thread/findcomments] Searching %s' %SUBREDDIT)
 
-            posts = list(subreddit.get_comments(limit=MAXPOSTS))
-            #posts = list(subreddit.get_comments(limit=None))
-            posts.reverse()
+            posts = subreddit.stream.comments()
 
             for post in posts:
-                pid = post.id
-
-                cur.execute('SELECT * FROM oldposts WHERE ID=?', [pid])
-                if cur.fetchone():
-                    #print('[thread/findcomments] already replied to comment')
-                    continue
 
                 try: pauthor = post.author.name
                 except AttributeError:
                     print('[thread/findcomments] author is deleted, skipped')
                     continue
 
-                if pauthor.lower() == r.user.name.lower():
+                if pauthor.lower() == r.user.me():
                     #print('[thread/findcomments] will not reply to myself')
                     continue
 
                 if IGNOREAUTHORS != [] and any(ignoreauthor.lower() == pauthor.lower() for ignoreauthor in IGNOREAUTHORS):
                     print['[thread/findcomments] Post made by ignore author, do not reply to: %s' %pauthor]
                     continue
-
-                cur.execute('INSERT INTO oldposts VALUES(?)', [pid])
-                sql.commit()
 
 
                 pbody = post.body.lower()
@@ -65,15 +47,9 @@ def findComments():
                         #TODO: write analyze content thread
                     except:
                         print('@ [thread/findcomments] answercomment thread crashed!')
-            cycles += 1
 
         except:
             print('[thread/findcomments] thread crashed, probably failed at get comments')
 
-        if cycles >= CLEANCYCLES:
-            print('[thread/findcomments] Cleaning database')
-            cur.execute('DELETE FROM oldposts WHERE id NOT IN (SELECT id FROM oldposts ORDER BY id DESC LIMIT ?)', [MAXPOSTS * 2])
-            sql.commit()
-            cycles = 0
         print('[thread/findcomments] Running again in %d seconds' % WAIT)
         time.sleep(WAIT)

@@ -1,10 +1,11 @@
-import praw, OAuth2Util
-from reddit.redditconfig import APP_UA
+import praw, obot
 
 r = 0
 
 def loginReddit():
     global r
-    r = praw.Reddit(APP_UA)
-    o = OAuth2Util.OAuth2Util(r)
-    o.refresh(force=True)
+    r = praw.Reddit(client_id=obot.client_id,
+                    client_secret=obot.client_secret,
+                    user_agent=obot.user_agent,
+                    username=obot.username,
+                    password=obot.password)
