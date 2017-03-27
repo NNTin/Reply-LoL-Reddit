@@ -90,3 +90,7 @@ ENV/
 .idea/workspace.xml
 *.pyc
 subredditstylesheet/Thumbs.db
+*.pyc
+.idea/workspace.xml
+*.pyc
+*.pyc
