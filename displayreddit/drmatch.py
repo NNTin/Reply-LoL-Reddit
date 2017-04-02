@@ -121,10 +121,4 @@ def drMatch(matchjson):
 
     intro = introTemplate.format(region=region, teamWinner=teamWinner, blueKills=blueKills, purpleKills=purpleKills, matchId=matchId, matchType=matchType, matchMode=matchMode, queueType=queueType, matchCreation=matchCreation, matchDuration=matchDuration)
 
-    message = '###A letter from Lumbdi, creator of Reply-LoL-Reddit\n\n' \
-    '/r/leagueoflegends Visitor,\n\n' \
-    'Some of you may know me; many of you probably won’t these days. This bot was born on July 24th, 2016. It was a mere 2 months after I turned 18, and it was the second bot I’d ever made. [/u/Reply-Dota-2-Reddit](https://www.reddit.com/r/dota2/user/Reply-Dota-2-Reddit) was the first bot (before /u/analyzelast100games), Reddit had no bots and maybe 5% of the Redditors that it does today.\n\n'\
-    '[...]\n\n' \
-    'In the meantime, I hope some of you will join me and over 50 thousand other players for a game of /r/place (it’s free!)\n\n'
-
-    return (message)
+    return (intro + tableBody)
